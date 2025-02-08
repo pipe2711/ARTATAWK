@@ -1,3 +1,5 @@
+#! /usr/bin/awk -f
+
 function eval(funcion, x) {
 	if (funcion ~ "^y[ ]*=*") { 
 		# Evitar vulnerabilidades
