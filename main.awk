@@ -1,7 +1,8 @@
 #!/usr/bin/awk -f
 
 function eval(funcion, x) {
-    cmd = "awk 'function f(x) { return " funcion " } BEGIN { print f(" x "); }'";
+    gsub(/y[ ]*=*/, "", funcion)  # Elimina "y=" si está presente
+    cmd = "awk 'function f(x) { return " funcion " } BEGIN { print f(" x ") }'"
     cmd | getline result;
     close(cmd);
     return result;
