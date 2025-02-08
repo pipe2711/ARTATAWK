@@ -31,16 +31,16 @@ BEGIN {
     }
 
     
-    print "label" " " funcion
-    print "height  40"
-    print "width  60"
-    print "offset x  0"
-    print "range " xmin " " ymin " " xmax " " ymax
-    print "left ticks " xmin " " xmax
-    print "bottom ticks " ymin " " ymax
+    print "label" " " funcion > "sample.graph"
+    print "height  40" >> "sample.graph"
+    print "width  60" >> "sample.graph"
+    print "offset x  0" >> "sample.graph"
+    print "range " xmin " " ymin " " xmax " " ymax >> "sample.graph"
+    print "left ticks " xmin " " xmax >> "sample.graph"
+    print "bottom ticks " ymin " " ymax >> "sample.graph"
 
   
     for (x = xmin; x <= xmax; x += step) {
-        print " " x " " points[x]
+        print " " x " " points[x] >> "sample.graph"
     }
 }
