@@ -13,3 +13,4 @@ BEGIN {
 	getline x_inicial x_final;
 	getline funcion;
 }
+
