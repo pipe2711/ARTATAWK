@@ -10,6 +10,7 @@ function eval(funcion, x) {
 
 BEGIN {
 	print "ARTATAWK";
+	print "Ingrese la funcion que quiere graficar : ";
 	getline x_inicial x_final;
 	getline funcion;
 }
