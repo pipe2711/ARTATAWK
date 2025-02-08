@@ -1,3 +1,5 @@
+#! /usr/bin/awk -f
+
 function eval(funcion, x) {
 	if (funcion ~ "^y[ ]*=*") { 
 		# Evitar vulnerabilidades
@@ -14,3 +16,4 @@ BEGIN {
 	getline x_inicial x_final;
 	getline funcion;
 }
+
