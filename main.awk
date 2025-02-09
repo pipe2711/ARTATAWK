@@ -1,7 +1,7 @@
-#!/usr/bin/awk -f
+#!/usr/bin/awk
 
 function eval(funcion, x) {
-    gsub(/y[ ]*=*/, "", funcion)  # Elimina "y=" si está presente
+    gsub(/y[ ]=/, "", funcion)  # Elimina "y=" si está presente
     cmd = "awk 'function f(x) { return " funcion " } BEGIN { print f(" x ") }'"
     cmd | getline result;
     close(cmd);
@@ -9,38 +9,61 @@ function eval(funcion, x) {
 }
 
 BEGIN {
-
     print "ARTATAWK"
     print "Ingrese la funcion (por ejemplo: y=x^2):"
     getline funcion
+    print "Ingrese el rango de el eje X (Minimo):"
+    getline xmin
+    print "Ingrese el rango de el eje X (Maximo):"
+    getline xmax 
 
-    xmin = -10
-    xmax = 10
-    step = 1  
+    step = 0.2
 
-    ymin = 99
-    ymax = -99
+    ymin = eval(funcion, xmin)
+    ymax = eval(funcion, xmin)
 
-    print "Calculando valores..."
+    i=0
+
     for (x = xmin; x <= xmax; x += step) {
-        y = eval(funcion, x)  
-        
+        y = eval(funcion, x)
+
         if (y < ymin) ymin = y
         if (y > ymax) ymax = y
-        points[x] = y
+        points[i] = y
+        i++
     }
 
-    
+    ymin-=step
+    ymax+=step
+
     print "label" " " funcion > "sample.graph"
-    print "height  40" >> "sample.graph"
-    print "width  60" >> "sample.graph"
+    print "height  30" >> "sample.graph"
+    print "width  150" >> "sample.graph"
     print "offset x  0" >> "sample.graph"
     print "range " xmin " " ymin " " xmax " " ymax >> "sample.graph"
-    print "left ticks " xmin " " xmax >> "sample.graph"
-    print "bottom ticks " ymin " " ymax >> "sample.graph"
+    printf "left ticks " >> "sample.graph"
 
-  
-    for (x = xmin; x <= xmax; x += step) {
-        print " " x " " points[x] >> "sample.graph"
+    for(j=ymin;j<=ymax;j +=(ymax-ymin)/10){
+        printf j " " >> "sample.graph"
     }
+    
+    print "" >> "sample.graph"
+
+    printf "bottom ticks " >> "sample.graph"
+
+    for(j=xmin;j<=xmax;j +=(xmax-xmin)/10){
+        printf j " " >> "sample.graph"
+    }
+
+    print "" >> "sample.graph"
+
+    i=0
+
+    for (x = xmin; x <= xmax; x += step) {
+        print " " x " " points[i] >>"sample.graph"
+        i++
+    }
+
+    system ("awk -f graficador.awk sample.graph")
+
 }
