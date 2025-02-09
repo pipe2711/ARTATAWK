@@ -16,8 +16,10 @@ BEGIN {
     getline xmin
     print "Ingrese el rango de el eje X (Máximo):"
     getline xmax 
+    print "Ingrese el paso del eje x :"
+    getline paso
 
-    step = 0.2
+    step = paso
 
     ymin = eval(funcion, xmin)
     ymax = eval(funcion, xmin)
@@ -47,6 +49,6 @@ BEGIN {
     }
 
     system("gnuplot -persist instructions.plot")
-    
+
     system ("awk -f main.awk")
 }

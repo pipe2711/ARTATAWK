@@ -26,8 +26,10 @@ BEGIN {
         getline xmin
         print "Ingrese el rango de el eje X (Maximo):"
         getline xmax 
+        print "Ingrese el paso del eje x :"
+        getline paso 
 
-        step = 0.2
+        step = paso
 
         ymin = eval(funcion, xmin)
         ymax = eval(funcion, xmin)
