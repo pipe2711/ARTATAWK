@@ -8,6 +8,8 @@ function eval(funcion, x) {
     return result;
 }
 
+
+
 BEGIN {
     print "ARTATAWK"
     print "Ingrese la funcion (por ejemplo: y = x^2):"
@@ -20,6 +22,22 @@ BEGIN {
     getline paso
 
     step = paso
+
+    print " "
+
+
+    #////////////////////////////////////////;
+    #Tabla para imprimir resultados
+
+     print "x\tsin(x)\tcos(x)\ttan(x)"
+    
+    #///////////////////////////////////////;
+
+     print " "
+
+
+   
+
 
     ymin = eval(funcion, xmin)
     ymax = eval(funcion, xmin)

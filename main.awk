@@ -31,6 +31,16 @@ BEGIN {
 
         step = paso
 
+        print " "
+
+        #////////////////////////////////////////
+        #Tabla para imprimir resultados
+
+        print "x\tsin(x)\tcos(x)\ttan(x)"
+        print " "
+    
+        #////////////////////////////////////////
+
         ymin = eval(funcion, xmin)
         ymax = eval(funcion, xmin)
 
