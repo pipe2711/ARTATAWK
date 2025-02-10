@@ -63,7 +63,7 @@ Para el cálculo de funciones matemáticas, se utilizó una implementación basa
 ✅ Enviar pull requests con optimizaciones
 
 📜 Licencia
-Este proyecto es de código abierto bajo la licencia MIT. ¡Siéntete libre de usarlo y mejorarlo! 😃
+Este proyecto es de código abierto bajo la licencia GNU GENERAL PUBLIC LICENSE. ¡Siéntete libre de usarlo y mejorarlo! 😃
 
 GitHub Utilizado para graficador ascii: 
 Usando https://github.com/pouriya/grawk
