@@ -30,10 +30,9 @@ AWK es un lenguaje de programación especializado en el procesamiento de texto �
 
 GNUPLOT es un software de visualización de datos 📊. Permite generar gráficos en terminal o exportarlos a imágenes de alta calidad. Es ampliamente utilizado en el ámbito científico y técnico para representar funciones matemáticas y datos experimentales.
 
-### ⚙️ ¿Cómo Funciona?
+### ⚙️ ¿Cómo Funciona? (Asegurate de tener instalado AWK)
 
 1️⃣ El usuario ingresa una función matemática 📋
-
 
 2️⃣ El programa solicita Minimo,Maximo y el paso de la funcion
 
@@ -49,6 +48,7 @@ Para ejecutarlo recuerda que debes clonar este repositorio luego ir a una consol
 ```bash
 awk -f main.awk
 ```
+** Si quieres graficar con GNUPLOT revisa la documentacion e instala el programa dependiendo de tu distribucion**
 
 ### 🔍 Implementación
 
