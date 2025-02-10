@@ -32,13 +32,23 @@ GNUPLOT es un software de visualización de datos 📊. Permite generar gráfico
 
 ### ⚙️ ¿Cómo Funciona?
 
-1️⃣ Se elige el método de visualización: GNUPLOT o ASCII 🎨
+1️⃣ El usuario ingresa una función matemática 📋
 
-2️⃣ El usuario ingresa una función matemática 📋
+
+2️⃣ El programa solicita Minimo,Maximo y el paso de la funcion
 
 3️⃣ El programa evalúa la función en un rango de valores 📉 Sen(x) Cos(x) Tan(x)
 
-4️⃣ Se genera el gráfico correspondiente ✨
+4️⃣ Se elige el método de visualización: GNUPLOT o ASCII 🎨
+
+5️⃣ Se genera el gráfico correspondiente ✨
+
+
+Para ejecutarlo recuerda que debes clonar este repositorio luego ir a una consola en tu sistema Linux y ejecutar este comando:
+
+```bash
+awk -f main.awk
+```
 
 ### 🔍 Implementación
 
